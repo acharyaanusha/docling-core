@@ -4,7 +4,12 @@ from typing import Final
 
 from docling_core.types.doc.labels import DocItemLabel
 
-CURRENT_VERSION: Final = "1.10.0"
+CURRENT_VERSION: Final = "1.11.0"
+
+# First schema version in which InlineGroup runs carry their own significant whitespace and
+# serializers concatenate them faithfully. Documents stamped below this are normalized on load
+# (see `DoclingDocument._migrate_legacy_inline_separators`).
+INLINE_WHITESPACE_CONTRACT_VERSION: Final = "1.11.0"
 
 
 DEFAULT_EXPORT_LABELS = {
